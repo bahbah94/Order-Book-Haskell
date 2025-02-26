@@ -7,11 +7,11 @@ cabal-version: 2.2
 name:           order-match
 version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/order-match#readme>
-homepage:       https://github.com/githubuser/order-match#readme
-bug-reports:    https://github.com/githubuser/order-match/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2025 Author name here
+homepage:       https://github.com/bahbah94/order-match#readme
+bug-reports:    https://github.com/bahbah94/order-match/issues
+author:         Randall Lionel Kharkrang
+maintainer:     bahduh94@gmail.com
+copyright:      2025 Randall Lionel Kharkrang
 license:        BSD-3-Clause
 license-file:   LICENSE
 build-type:     Simple
@@ -21,10 +21,17 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/order-match
+  location: https://github.com/bahbah94/order-match
 
 library
   exposed-modules:
+      CLI.Commands
+      CLI.Execute
+      CLI.Parser
+      CLI.State
+      Core.Engine
+      Core.Matching
+      Core.Types
       Lib
   other-modules:
       Paths_order_match
@@ -35,9 +42,17 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , containers
+    , optparse-applicative
+    , prettyprinter
+    , stm
+    , tasty
+    , tasty-hunit
+    , text
+    , time
   default-language: Haskell2010
 
-executable order-match-exe
+executable order-match
   main-is: Main.hs
   other-modules:
       Paths_order_match
@@ -48,7 +63,15 @@ executable order-match-exe
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers
+    , optparse-applicative
     , order-match
+    , prettyprinter
+    , stm
+    , tasty
+    , tasty-hunit
+    , text
+    , time
   default-language: Haskell2010
 
 test-suite order-match-test
@@ -63,5 +86,13 @@ test-suite order-match-test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers
+    , optparse-applicative
     , order-match
+    , prettyprinter
+    , stm
+    , tasty
+    , tasty-hunit
+    , text
+    , time
   default-language: Haskell2010

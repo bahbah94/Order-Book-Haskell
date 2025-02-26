@@ -1,6 +1,6 @@
 name:                order-match
 version:             0.1.0.0
-github:              "https://github.com/bahbah94/order-match"
+github:              "bahbah94/order-match"
 license:             BSD-3-Clause
 author:              "Randall Lionel Kharkrang"
 maintainer:          "bahduh94@gmail.com"
@@ -27,6 +27,9 @@ dependencies:
 - time
 - optparse-applicative # For CLI tooling
 - prettyprinter
+- time
+- tasty
+- tasty-hunit
 
 ghc-options:
 - -Wall
@@ -43,7 +46,7 @@ library:
   source-dirs: src
 
 executables:
-  order-match-exe:
+  order-match:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
